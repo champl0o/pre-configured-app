@@ -1,0 +1,44 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.0
+  Exclude:
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'bin/*'
+
+# Layout
+Layout/LineLength:
+  Max: 120
+
+# Metrics
+Metrics/BlockLength:
+  Exclude:
+    - 'config/routes.rb'
+    - 'spec/**/*.rb'
+Metrics/MethodLength:
+  Max: 15
+Metrics/ClassLength:
+  Max: 150
+Metrics/ModuleLength:
+  Max: 150
+Metrics/ParameterLists:
+  Max: 5
+
+# Style
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+# Documentation
+Style/Documentation:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: true
+Style/FrozenStringLiteralComment:
+  Enabled: false
